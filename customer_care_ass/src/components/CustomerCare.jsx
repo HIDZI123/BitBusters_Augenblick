@@ -34,9 +34,8 @@ const CustomerCare = () => {
     try {
       const maskedInputValue = ` ${inputValue}`;
       const response = await query({ inputs: maskedInputValue });
-      const generatedText = response[0]["generated_text"];
-      const answer = generatedText.split("Answer:")[1];
-      setResponseText(answer);
+      /* const generatedText = response[0]["generated_text"]; */
+      setResponseText(response[0]["generated_text"]);
     } catch (error) {
       <ErrorComp />;
     }
